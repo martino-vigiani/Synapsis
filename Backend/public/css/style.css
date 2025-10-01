@@ -1,0 +1,115 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: #1e1e1e;
+    font-family: 'Fira Code', monospace;
+}
+
+#editor-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    z-index: 1;
+}
+
+.editor-header {
+    display: flex;
+    align-items: center;
+    background-color: #3c3c3c;
+    padding: 10px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.window-controls {
+    display: flex;
+    margin-right: 15px;
+}
+
+.window-controls .control {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.window-controls .control:nth-child(1) { background-color: #ff5f56; }
+.window-controls .control:nth-child(2) { background-color: #ffbd2e; }
+.window-controls .control:nth-child(3) { background-color: #27c93f; }
+
+.editor-tab {
+    background-color: #1e1e1e;
+    color: #d4d4d4;
+    padding: 8px 15px;
+    border-radius: 5px 5px 0 0;
+    font-size: 14px;
+}
+
+#code-background {
+    position: absolute;
+    top: 42px; /* Height of header */
+    bottom: 0;
+    left: 0;
+    right: 0;
+    color: #d4d4d4;
+    font-size: 14px;
+    line-height: 1.5;
+    white-space: pre;
+    padding: 20px;
+    overflow: hidden;
+    margin: 0;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 2;
+}
+
+.content h1 {
+    color: #fff;
+    font-size: 5rem;
+    font-weight: 700;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.5), 0 0 30px rgba(0, 0, 0, 0.8);
+    margin: 0;
+}
+
+.content footer {
+    color: #888;
+    font-size: 1.2rem;
+    margin-top: 20px;
+}
+
+.token-comment { color: #6a9955; }
+.token-keyword { color: #c586c0; }
+.token-string { color: #ce9178; }
+.token-function { color: #dcdcaa; }
+.token-variable { color: #9cdcfe; }
+.token-number { color: #b5cea8; }
+.token-operator { color: #d4d4d4; }
+.token-class-name { color: #4ec9b0; }
+.cursor {
+    display: inline-block;
+    width: 2px;
+    height: 1.2em;
+    background-color: #d4d4d4;
+    vertical-align: text-bottom;
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
